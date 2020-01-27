@@ -133,13 +133,12 @@ public class SplashScreen extends JWindow {
     public void paint(Graphics g) {
         super.paint(g);
 
-        g.setFont(customFont);
-
         // Display loading message in the upper center
         int myNameX = 125;
         int myNameY = 30;
         String myName = "Rohit Gangurde";
-
+        Font myFont = new Font(FONT_NAME, FONT_STYLE, 30);
+        g.setFont(myFont);
         g.setColor(SHADOW_TEXT_COLOR);
         g.drawString(myName, myNameX-1, myNameY-1);
 
@@ -148,7 +147,7 @@ public class SplashScreen extends JWindow {
         // Display loading message in the lower left corner
         int textX = LOADING_MSG_MARGIN_X;
         int textY = getHeight()-LOADING_MSG_MARGIN_Y; 
-
+        g.setFont(customFont);
         g.setColor(SHADOW_TEXT_COLOR);
         g.drawString(loadingMessage, textX-1, textY-1);
 
